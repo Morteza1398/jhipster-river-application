@@ -1,0 +1,70 @@
+entity TableStructure {
+    bigBlind Integer,
+	rakePolicy String,
+    numberOfSeats Integer,
+    minBuyIn Integer,
+    maxBuyIn Integer
+}
+entity TableSnapshot {
+    dealerSeatNumber Integer,
+    stage Stage,
+    maxRaisedChip Integer,
+    turnActSeatNumber Integer,
+    lastToActSeatNumber Integer,
+    fullRaiserSeatNumber Integer,
+    fullRaiserChipDifference Integer,
+    normalPlayersCount Integer,
+	chipInStagePattern String,
+    cards String
+}
+enum Stage {
+  EMPTY,
+  NOT_STARTED,
+  PRE_FLOP,
+  FLOP,
+  TURN,
+  RIVER,
+  COLLECT,
+  MOCK,
+  FINISHED
+}
+entity Player {
+	username String,
+	state PlayerState,
+	disconnect Boolean,
+	wantToLeave Boolean,
+	satOutHands Integer,
+	seatNumber Integer,
+	tableRest Integer,
+	handRest Integer	
+    chipInStage Integer,
+	cards String
+}
+enum PlayerState {
+    EMPTY,
+    RESERVE,
+    WAIT_FOR_BB,
+    WANT_TO_PAY_BB,
+    NORMAL,
+    ALL_IN,
+    FOLDED,
+    CAN_MOCK,
+    WAIT_FOR_LEAVE,
+    CAN_REBUY,
+    SITOUT
+}
+entity Pot {
+    potChips Integer,
+    potPlayersSeatNumbers String
+}
+relationship OneToMany {
+	TableSnapshot{pots} to Pot,
+	TableSnapshot{players} to	Player
+}
+
+relationship ManyToOne {
+	TableSnapshot{structure} to TableStructure
+}
+
+
+service all with serviceImpl

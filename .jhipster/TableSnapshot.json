@@ -1,0 +1,76 @@
+{
+    "name": "TableSnapshot",
+    "fields": [
+        {
+            "fieldName": "dealerSeatNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stage",
+            "fieldType": "Stage",
+            "fieldValues": "EMPTY,NOT_STARTED,PRE_FLOP,FLOP,TURN,RIVER,COLLECT,MOCK,FINISHED"
+        },
+        {
+            "fieldName": "maxRaisedChip",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "turnActSeatNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastToActSeatNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fullRaiserSeatNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fullRaiserChipDifference",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "normalPlayersCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "chipInStagePattern",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cards",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "pot",
+            "otherEntityRelationshipName": "tableSnapshot",
+            "relationshipName": "pots"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "player",
+            "otherEntityRelationshipName": "tableSnapshot",
+            "relationshipName": "players"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tableStructure",
+            "otherEntityRelationshipName": "tableSnapshot",
+            "relationshipName": "structure",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190602115744",
+    "entityTableName": "table_snapshot",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

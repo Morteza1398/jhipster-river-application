@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity TableSnapshot.
+    -->
+    <changeSet id="20190602115744-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="structure_id"
+                                 baseTableName="table_snapshot"
+                                 constraintName="fk_table_snapshot_structure_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_structure"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -11,6 +11,22 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import tableStructure, {
+  TableStructureState
+} from 'app/entities/table-structure/table-structure.reducer';
+// prettier-ignore
+import tableSnapshot, {
+  TableSnapshotState
+} from 'app/entities/table-snapshot/table-snapshot.reducer';
+// prettier-ignore
+import player, {
+  PlayerState
+} from 'app/entities/player/player.reducer';
+// prettier-ignore
+import pot, {
+  PotState
+} from 'app/entities/pot/pot.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -23,6 +39,10 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly tableStructure: TableStructureState;
+  readonly tableSnapshot: TableSnapshotState;
+  readonly player: PlayerState;
+  readonly pot: PotState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -37,6 +57,10 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  tableStructure,
+  tableSnapshot,
+  player,
+  pot,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
