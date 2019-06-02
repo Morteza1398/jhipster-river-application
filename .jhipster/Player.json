@@ -1,0 +1,63 @@
+{
+    "name": "Player",
+    "fields": [
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "PlayerState",
+            "fieldValues": "EMPTY,RESERVE,WAIT_FOR_BB,WANT_TO_PAY_BB,NORMAL,ALL_IN,FOLDED,CAN_MOCK,WAIT_FOR_LEAVE,CAN_REBUY,SITOUT"
+        },
+        {
+            "fieldName": "disconnect",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "wantToLeave",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "satOutHands",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "seatNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tableRest",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "handRest",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "chipInStage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cards",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "tableSnapshot",
+            "otherEntityName": "tableSnapshot",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190602115745",
+    "entityTableName": "player",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

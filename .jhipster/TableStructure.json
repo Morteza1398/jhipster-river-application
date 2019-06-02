@@ -1,0 +1,35 @@
+{
+    "name": "TableStructure",
+    "fields": [
+        {
+            "fieldName": "bigBlind",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rakePolicy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfSeats",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "minBuyIn",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxBuyIn",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190602115743",
+    "entityTableName": "table_structure",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

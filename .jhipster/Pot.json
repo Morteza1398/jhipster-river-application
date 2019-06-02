@@ -1,0 +1,30 @@
+{
+    "name": "Pot",
+    "fields": [
+        {
+            "fieldName": "potChips",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "potPlayersSeatNumbers",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "tableSnapshot",
+            "otherEntityName": "tableSnapshot",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190602115746",
+    "entityTableName": "pot",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
